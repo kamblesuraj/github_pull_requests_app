@@ -2,9 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/profileIcon"
+    <item
+        android:id="@+id/search_icon"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="collapseActionView|always" />
+
+    <item
+        android:id="@+id/profileIcon"
         android:title="Profile"
-        app:showAsAction="always"
         app:actionLayout="@layout/layout_profile"
-        />
+        app:showAsAction="always" />
 </menu>
