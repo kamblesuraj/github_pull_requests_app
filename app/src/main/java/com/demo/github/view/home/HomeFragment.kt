@@ -180,7 +180,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setProfile(profile : UserModel){
-        binding.homeToolbarTitle.text = getWelcomeText(profile)
+//        binding.homeToolbarTitle.text = getWelcomeText(profile)
         requestManager
             .load(profile.avatar_url)
             .placeholder(R.drawable.icon_person)

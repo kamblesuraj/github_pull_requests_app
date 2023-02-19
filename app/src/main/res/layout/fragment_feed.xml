@@ -8,44 +8,35 @@
     tools:context=".view.home.HomeFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp"
-        >
+        app:elevation="0dp">
+
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/homeToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:id="@+id/homeToolbar"
-            app:menu="@menu/home_menu"
-            app:titleTextColor="@color/white"
-            app:layout_scrollFlags="scroll|enterAlways"
             android:background="@color/colorPrimary"
             app:contentInsetStartWithNavigation="5dp"
-            >
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:menu="@menu/home_menu"
+            app:titleTextColor="@color/white">
+
 
             <ImageView
                 android:id="@+id/homeToolbarIcon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/icon_git"
-                android:cropToPadding="true"
                 android:adjustViewBounds="true"
-                />
-
-            <TextView
-                android:id="@+id/homeToolbarTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:gravity="start"
-                android:paddingVertical="15dp"
-                android:text=""
-                android:textAppearance="@style/TitleTextAppearance"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:cropToPadding="true"
+                android:src="@drawable/icon_git"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/searchView"
+                app:layout_constraintHorizontal_bias="0.062"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.47" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -88,14 +79,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
-            android:text="....."
             android:gravity="center"
+            android:text="....."
             android:textAppearance="@style/TitleTextAppearance"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            android:visibility="invisible"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
@@ -104,16 +95,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
-            android:text="Retry"
             android:clickable="true"
             android:gravity="center"
             android:padding="10dp"
-            android:textColor="@color/colorAccent"
+            android:text="Retry"
             android:textAppearance="@style/TitleTextAppearance"
+            android:textColor="@color/colorAccent"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            android:visibility="invisible"
             app:layout_constraintTop_toBottomOf="@id/feedStatus"
             app:layout_constraintVertical_bias="0.5" />
 
@@ -124,7 +115,6 @@
             android:indeterminateTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="invisible"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

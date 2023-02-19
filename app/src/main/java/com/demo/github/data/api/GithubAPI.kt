@@ -2,6 +2,7 @@ package com.demo.github.data.api
 
 import com.demo.github.data.model.PullRequestModel
 import com.demo.github.data.model.UserModel
+import com.demo.github.data.model.UserRepoItem
 import com.demo.github.utils.PullRequestState
 import retrofit2.Response
 import retrofit2.http.GET
@@ -27,5 +28,11 @@ interface GithubAPI {
         @Path(value="full_url", encoded = true)
         fullUrl : String,
     ) : Response<UserModel>
+
+    @GET("{full_url}")
+    suspend fun getUserDetails(
+        @Path(value="full_url",encoded = true)
+        fullUrl: String,
+    ): Response<UserRepoItem>
 
 }
